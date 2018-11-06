@@ -1,0 +1,12 @@
+applications:
+- name: hello
+  disk_quota: 1G
+  instances: 1
+  memory: 1G
+  routes:
+  - route: hello.apps.pcfone.io
+  services:
+  - mydb
+  - config-server
+  stack: cflinuxfs2
+  path: target/hello-0.0.1-SNAPSHOT.jar

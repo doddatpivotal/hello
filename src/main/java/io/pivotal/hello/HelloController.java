@@ -1,11 +1,15 @@
 package io.pivotal.hello;
 
+import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@Log
+@RefreshScope
 @RestController
 public class HelloController {
 
@@ -37,6 +41,7 @@ public class HelloController {
 
     @GetMapping("/language")
     String getLanguage() {
+        log.info("Received request for language.  Returning: " + language);
         return language;
     }
 }
