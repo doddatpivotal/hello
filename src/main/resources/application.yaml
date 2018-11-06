@@ -1,0 +1,5 @@
+language: English
+---
+spring:
+  profiles: cloud
+language: Spanish
